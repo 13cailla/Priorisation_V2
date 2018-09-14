@@ -1,0 +1,46 @@
+{
+    "polling_station": {
+        "versions": [
+            {
+                "JC_pol_station_code": [1,2,3,4,5,6,7,8]
+            },
+            {
+                "municipality_code_insee": [11,12,13,14,15,16,17,18],
+                "BDV_code": [1,1,1,3,3,3,5,6]
+            }
+        ]
+    },
+    "candidate": {
+        "versions": [
+            {
+                "candidate_id": [1],
+                "nuance_initials": ["FN"]
+            },
+            {
+                "surname": ["Le Pen"],
+                "first_name": ["Marine"]
+            }
+        ]
+    },
+    "IRIS": {
+        "versions": [
+            {
+                "iris_code": []
+            }
+        ]
+    },
+    "municipality": {
+        "versions": [
+            {
+                "municipality_insee_code": []
+            }
+        ]
+    },
+    "nuance": {
+        "versions": [
+            {
+                "nuance_initials": []
+            }
+        ]
+    }
+}
