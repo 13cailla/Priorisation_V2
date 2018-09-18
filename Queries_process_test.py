@@ -300,3 +300,30 @@ def get_features(var_datasets:list, local_key_code:dict, compliteness_ratio:floa
         lookup_features(local_metadata,filtered_local_datasets,training_metadata[var_dataset_name],filtered_training_datasets[var_dataset_name],compliteness)
 
     return local_features_metadata, local_features_datasets, training_features_metadata, training_features_datasets, compliteness_var
+
+
+
+# Tests
+
+var_datasets = ["fake_data"]
+local_key_code = {
+    "polling_station":{
+        "municipality_code_insee":[11,11,7],
+        "BDV_code":[1,1,3]
+        },
+    "candidate":{
+        "candidate_id":[1,1,3],
+        "nuance_initials":["FN","PS","FF"]
+        },
+    "bullshit":{
+        "bullshit1":[1,1,1]
+        }
+    }
+compliteness_ratio = 0.2
+
+(a,b,c,d,e) = get_features(var_datasets,local_key_code,compliteness_ratio)
+print("local_features_metadata: ","\n",a,"\n")
+print("local_features_datasets: ","\n",b,"\n")
+print("training_features_metadata: ","\n",c,"\n")
+print("training_features_datasets: ","\n",d,"\n")
+print("compliteness_var: ","\n",e,"\n")
