@@ -1,24 +1,50 @@
 {
     "fake_data": {
-        "tags":{
-            
-        },
+        "tags": {},
         "get": {
             "source": "None"
         },
-        "keys":{
-            "polling_station":{
-                "JC_pol_station_code":"absurd_column_name"
+        "keys": {
+            "polling_station": {
+                "JC_pol_station_code": "absurd_column_name"
             },
-            "candidate":{
-                "candidate_id":"another_absurd_column_name",
-                "nuance_initials":"yet_another_col_name"
+            "candidate": {
+                "candidate_id": "another_absurd_column_name",
+                "nuance_initials": "yet_another_col_name"
+            },
+            "bullshit": {
+                "bullshit1": "bullshit2"
             }
         },
-        "raw_data":{
-            "data":{
-                "tags":{
-                    "test":"test"
+        "raw_data": {
+            "data": {
+                "tags": {
+                    "test": "test"
+                }
+            }
+        }
+    },
+    "fake_data2": {
+        "tags": {},
+        "get": {
+            "source": "None"
+        },
+        "keys": {
+            "polling_station": {
+                "JC_pol_station_code": "absurd_column_name"
+            },
+            "candidate": {
+                "candidate_id": "another_absurd_column_name",
+                "nuance_initials": "yet_another_col_name"
+            },
+            "bullshit": {
+                "bullshit1": "bullshit2"
+            }
+        },
+        "raw_data": {
+            "data": {
+                "tags": {
+                    "test": "test"
                 }
             }
         }
@@ -31,20 +57,21 @@
             "round": 1
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "polling_station": {
-                "municipality_code_insee": "codeinsee",
-                "BDV_code": "code_du_b_vote"
+                "municipality_code_insee": "Code Insee",
+                "BDV_code": "Bureau de vote"
             },
             "candidate": {
-                "surname": "nom",
-                "first_name": "prenom"
+                "surname": "Nom",
+                "first_name": "Prénom"
             }
         },
         "raw_data": {
-            "abs_ins": {
+            "% Abs/Ins": {
                 "description": "Abstention sur inscrits",
                 "tags": {
                     "type": "number",
@@ -61,14 +88,14 @@
                     }
                 }
             },
-            "abstentions": {
+            "Abstentions": {
                 "description": "Abstentions",
                 "tags": {
                     "type": "number",
                     "value": "abstention"
                 }
             },
-            "adresse": {
+            "Adresse": {
                 "description": "Adresse du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -77,14 +104,14 @@
                     "qualifier": "address"
                 }
             },
-            "blancs": {
+            "Blancs": {
                 "description": "Blancs",
                 "tags": {
                     "type": "number",
                     "value": "blank"
                 }
             },
-            "blancs_ins": {
+            "% Blancs/Ins": {
                 "description": "Blancs sur inscrits",
                 "tags": {
                     "type": "number",
@@ -101,7 +128,7 @@
                     }
                 }
             },
-            "blancs_vot": {
+            "% Blancs/Vot": {
                 "description": "Blancs sur votants",
                 "tags": {
                     "type": "number",
@@ -118,7 +145,7 @@
                     }
                 }
             },
-            "code_de_la_circonscription": {
+            "Code de la circonscription": {
                 "description": "Code de la circonscription",
                 "tags": {
                     "type": "str",
@@ -127,7 +154,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_de_la_commune": {
+            "Code de la commune": {
                 "description": "Code de la commune",
                 "tags": {
                     "type": "str",
@@ -136,7 +163,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_b_vote": {
+            "Bureau de vote": {
                 "description": "Code du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -145,7 +172,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_departement": {
+            "Code du département": {
                 "description": "Code du Département",
                 "tags": {
                     "type": "str",
@@ -154,7 +181,7 @@
                     "identifier": "code"
                 }
             },
-            "code_postal": {
+            "Code Postal": {
                 "description": "Code postal",
                 "tags": {
                     "type": "str",
@@ -163,7 +190,7 @@
                     "identifier": "code"
                 }
             },
-            "codeinsee": {
+            "Code Insee": {
                 "description": "Code INSEE de la commune",
                 "tags": {
                     "type": "str",
@@ -172,7 +199,7 @@
                     "identifier": "code"
                 }
             },
-            "coordonnees": {
+            "Coordonnées": {
                 "description": "Coordonnées",
                 "tags": {
                     "type": "geo_point_2d",
@@ -180,7 +207,7 @@
                     "scope": "polling_station"
                 }
             },
-            "exp_ins": {
+            "% Exp/Ins": {
                 "description": "Exprimés sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -197,7 +224,7 @@
                     }
                 }
             },
-            "exp_vot": {
+            "% Exp/Vot": {
                 "description": "Exprimés sur Votants",
                 "tags": {
                     "type": "number",
@@ -214,21 +241,21 @@
                     }
                 }
             },
-            "exprimes": {
+            "Exprimés": {
                 "description": "Exprimés",
                 "tags": {
                     "type": "number",
                     "value": "valid_votes"
                 }
             },
-            "inscrits": {
+            "Inscrits": {
                 "description": "Inscrits",
                 "tags": {
                     "type": "number",
                     "value": "registered"
                 }
             },
-            "libelle_de_la_circonscription": {
+            "Circonscription": {
                 "description": "Libellé de la circonscription",
                 "tags": {
                     "type": "str",
@@ -236,7 +263,7 @@
                     "scope": "district",
                     "qualifier": "caption"
                 },
-                "libelle_de_la_commune": {
+                "Commune": {
                     "description": "Libellé de la commune",
                     "tags": {
                         "type": "str",
@@ -245,7 +272,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "libelle_du_departement": {
+                "Département": {
                     "description": "Libellé du département",
                     "tags": {
                         "type": "str",
@@ -254,7 +281,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "ndegpanneau": {
+                "N°Panneau": {
                     "description": "N°Panneau",
                     "tags": {
                         "type": "str",
@@ -262,7 +289,7 @@
                         "qualifier": "n_billboard"
                     }
                 },
-                "nom": {
+                "Nom": {
                     "description": "Nom du candidat",
                     "tags": {
                         "type": "str",
@@ -270,10 +297,10 @@
                         "qualifier": "surname"
                     }
                 },
-                "nom_bureau_vote": {
+                "Nom Bureau Vote": {
                     "description": "Type de bureau de vote"
                 },
-                "nuls": {
+                "Nuls": {
                     "description": "Nuls",
                     "tags": {
                         "type": "number",
@@ -282,7 +309,7 @@
                         ]
                     }
                 },
-                "nuls_ins": {
+                "% Nuls/Ins": {
                     "description": "Nuls sur Inscrits",
                     "tags": {
                         "type": "number",
@@ -299,7 +326,7 @@
                         }
                     }
                 },
-                "nuls_vot": {
+                "% Nuls/Vot": {
                     "description": "Nuls sur votants",
                     "tags": {
                         "type": "number",
@@ -316,7 +343,7 @@
                         }
                     }
                 },
-                "prenom": {
+                "Prénom": {
                     "description": "Prénom du Candidat",
                     "tags": {
                         "type": "str",
@@ -324,7 +351,7 @@
                         "qualifier": "first_name"
                     }
                 },
-                "sexe": {
+                "Sexe": {
                     "description": "Sexe du Candidat",
                     "tags": {
                         "type": "str",
@@ -341,11 +368,11 @@
                         "qualifier": "caption"
                     }
                 },
-                "ville": {
+                "Ville": {
                     "description": "Nom de la ville",
                     "tags": {}
                 },
-                "voix": {
+                "Voix": {
                     "description": "Nombre de voix du candidat",
                     "tags": {
                         "type": "number",
@@ -354,7 +381,7 @@
                         ]
                     }
                 },
-                "voix_exp": {
+                "% Voix/Exp": {
                     "description": "Voix sur exprimés",
                     "tags": {
                         "type": "number",
@@ -371,7 +398,7 @@
                         }
                     }
                 },
-                "voix_ins": {
+                "% Voix/Ins": {
                     "description": "Voix sur inscrits",
                     "tags": {
                         "type": "number",
@@ -388,7 +415,7 @@
                         }
                     }
                 },
-                "vot_ins": {
+                "% Vot/Ins": {
                     "description": "Votants sur inscrits",
                     "tags": {
                         "type": "number",
@@ -405,7 +432,7 @@
                         }
                     }
                 },
-                "votants": {
+                "Votants": {
                     "description": "Votants",
                     "tags": {
                         "type": "number",
@@ -423,20 +450,21 @@
             "round": 2
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "polling_station": {
-                "municipality_code_insee": "codeinsee",
-                "BDV_code": "code_du_b_vote"
+                "municipality_code_insee": "Code Insee",
+                "BDV_code": "Bureau de vote"
             },
             "candidate": {
-                "surname": "nom",
-                "first_name": "prenom"
+                "surname": "Nom",
+                "first_name": "Prénom"
             }
         },
         "raw_data": {
-            "abs_ins": {
+            "% Abs/Ins": {
                 "description": "Abstention sur inscrits",
                 "tags": {
                     "type": "number",
@@ -453,14 +481,14 @@
                     }
                 }
             },
-            "abstentions": {
+            "Abstentions": {
                 "description": "Abstentions",
                 "tags": {
                     "type": "number",
                     "value": "abstention"
                 }
             },
-            "adresse": {
+            "Adresse": {
                 "description": "Adresse du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -469,14 +497,14 @@
                     "qualifier": "address"
                 }
             },
-            "blancs": {
+            "Blancs": {
                 "description": "Blancs",
                 "tags": {
                     "type": "number",
                     "value": "blank"
                 }
             },
-            "blancs_ins": {
+            "% Blancs/Ins": {
                 "description": "Blancs sur inscrits",
                 "tags": {
                     "type": "number",
@@ -493,7 +521,7 @@
                     }
                 }
             },
-            "blancs_vot": {
+            "% Blancs/Vot": {
                 "description": "Blancs sur votants",
                 "tags": {
                     "type": "number",
@@ -510,7 +538,7 @@
                     }
                 }
             },
-            "code_de_la_circonscription": {
+            "Code de la circonscription": {
                 "description": "Code de la circonscription",
                 "tags": {
                     "type": "str",
@@ -519,7 +547,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_de_la_commune": {
+            "Code de la commune": {
                 "description": "Code de la commune",
                 "tags": {
                     "type": "str",
@@ -528,7 +556,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_b_vote": {
+            "Bureau de vote": {
                 "description": "Code du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -537,7 +565,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_departement": {
+            "Code du département": {
                 "description": "Code du Département",
                 "tags": {
                     "type": "str",
@@ -546,7 +574,7 @@
                     "identifier": "code"
                 }
             },
-            "code_postal": {
+            "Code Postal": {
                 "description": "Code postal",
                 "tags": {
                     "type": "str",
@@ -555,16 +583,16 @@
                     "identifier": "code"
                 }
             },
-            "codeinsee": {
-                "description": "Code INSEE du Bureau De Vote",
+            "Code Insee": {
+                "description": "Code INSEE de la commune",
                 "tags": {
                     "type": "str",
                     "class": "zone",
-                    "scope": "polling_station",
+                    "scope": "municipality",
                     "identifier": "code"
                 }
             },
-            "coordonnees": {
+            "Coordonnées": {
                 "description": "Coordonnées",
                 "tags": {
                     "type": "geo_point_2d",
@@ -572,7 +600,7 @@
                     "scope": "polling_station"
                 }
             },
-            "exp_ins": {
+            "% Exp/Ins": {
                 "description": "Exprimés sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -589,7 +617,7 @@
                     }
                 }
             },
-            "exp_vot": {
+            "% Exp/Vot": {
                 "description": "Exprimés sur Votants",
                 "tags": {
                     "type": "number",
@@ -606,21 +634,21 @@
                     }
                 }
             },
-            "exprimes": {
+            "Exprimés": {
                 "description": "Exprimés",
                 "tags": {
                     "type": "number",
                     "value": "valid_votes"
                 }
             },
-            "inscrits": {
+            "Inscrits": {
                 "description": "Inscrits",
                 "tags": {
                     "type": "number",
                     "value": "registered"
                 }
             },
-            "libelle_de_la_circonscription": {
+            "Circonscription": {
                 "description": "Libellé de la circonscription",
                 "tags": {
                     "type": "str",
@@ -628,7 +656,7 @@
                     "scope": "district",
                     "qualifier": "caption"
                 },
-                "libelle_de_la_commune": {
+                "Commune": {
                     "description": "Libellé de la commune",
                     "tags": {
                         "type": "str",
@@ -637,7 +665,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "libelle_du_departement": {
+                "Département": {
                     "description": "Libellé du département",
                     "tags": {
                         "type": "str",
@@ -646,7 +674,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "ndegpanneau": {
+                "N°Panneau": {
                     "description": "N°Panneau",
                     "tags": {
                         "type": "str",
@@ -654,7 +682,7 @@
                         "qualifier": "n_billboard"
                     }
                 },
-                "nom": {
+                "Nom": {
                     "description": "Nom du candidat",
                     "tags": {
                         "type": "str",
@@ -662,10 +690,10 @@
                         "qualifier": "surname"
                     }
                 },
-                "nom_bureau_vote": {
+                "Nom Bureau Vote": {
                     "description": "Type de bureau de vote"
                 },
-                "nuls": {
+                "Nuls": {
                     "description": "Nuls",
                     "tags": {
                         "type": "number",
@@ -674,7 +702,7 @@
                         ]
                     }
                 },
-                "nuls_ins": {
+                "% Nuls/Ins": {
                     "description": "Nuls sur Inscrits",
                     "tags": {
                         "type": "number",
@@ -691,7 +719,7 @@
                         }
                     }
                 },
-                "nuls_vot": {
+                "% Nuls/Vot": {
                     "description": "Nuls sur votants",
                     "tags": {
                         "type": "number",
@@ -708,7 +736,7 @@
                         }
                     }
                 },
-                "prenom": {
+                "Prénom": {
                     "description": "Prénom du Candidat",
                     "tags": {
                         "type": "str",
@@ -716,7 +744,7 @@
                         "qualifier": "first_name"
                     }
                 },
-                "sexe": {
+                "Sexe": {
                     "description": "Sexe du Candidat",
                     "tags": {
                         "type": "str",
@@ -733,11 +761,11 @@
                         "qualifier": "caption"
                     }
                 },
-                "ville": {
+                "Ville": {
                     "description": "Nom de la ville",
                     "tags": {}
                 },
-                "voix": {
+                "Voix": {
                     "description": "Nombre de voix du candidat",
                     "tags": {
                         "type": "number",
@@ -746,7 +774,7 @@
                         ]
                     }
                 },
-                "voix_exp": {
+                "% Voix/Exp": {
                     "description": "Voix sur exprimés",
                     "tags": {
                         "type": "number",
@@ -763,7 +791,7 @@
                         }
                     }
                 },
-                "voix_ins": {
+                "% Voix/Ins": {
                     "description": "Voix sur inscrits",
                     "tags": {
                         "type": "number",
@@ -780,7 +808,7 @@
                         }
                     }
                 },
-                "vot_ins": {
+                "% Vot/Ins": {
                     "description": "Votants sur inscrits",
                     "tags": {
                         "type": "number",
@@ -797,7 +825,7 @@
                         }
                     }
                 },
-                "votants": {
+                "Votants": {
                     "description": "Votants",
                     "tags": {
                         "type": "number",
@@ -815,20 +843,21 @@
             "round": 1
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "polling_station": {
-                "municipality_code_insee": "codeinsee",
-                "BDV_code": "code_du_b_vote"
+                "municipality_code_insee": "Code Insee",
+                "BDV_code": "Bureau de vote"
             },
             "candidate": {
-                "surname": "nom",
-                "first_name": "prenom"
+                "surname": "Nom",
+                "first_name": "Prénom"
             }
         },
         "raw_data": {
-            "abs_ins": {
+            "% Abs/Ins": {
                 "description": "Abstention sur inscrits",
                 "tags": {
                     "type": "number",
@@ -845,14 +874,14 @@
                     }
                 }
             },
-            "abstentions": {
+            "Abstentions": {
                 "description": "Abstentions",
                 "tags": {
                     "type": "number",
                     "value": "abstention"
                 }
             },
-            "adresse": {
+            "Adresse": {
                 "description": "Adresse du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -861,14 +890,14 @@
                     "qualifier": "address"
                 }
             },
-            "blancs": {
+            "Blancs": {
                 "description": "Blancs",
                 "tags": {
                     "type": "number",
                     "value": "blank"
                 }
             },
-            "blancs_ins": {
+            "% Blancs/Ins": {
                 "description": "Blancs sur inscrits",
                 "tags": {
                     "type": "number",
@@ -885,7 +914,7 @@
                     }
                 }
             },
-            "blancs_vot": {
+            "% Blancs/Vot": {
                 "description": "Blancs sur votants",
                 "tags": {
                     "type": "number",
@@ -902,7 +931,7 @@
                     }
                 }
             },
-            "code_de_la_circonscription": {
+            "Code de la circonscription": {
                 "description": "Code de la circonscription",
                 "tags": {
                     "type": "str",
@@ -911,7 +940,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_de_la_commune": {
+            "Code de la commune": {
                 "description": "Code de la commune",
                 "tags": {
                     "type": "str",
@@ -920,7 +949,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_b_vote": {
+            "Bureau de vote": {
                 "description": "Code du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -929,7 +958,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_departement": {
+            "Code du département": {
                 "description": "Code du Département",
                 "tags": {
                     "type": "str",
@@ -938,7 +967,7 @@
                     "identifier": "code"
                 }
             },
-            "code_postal": {
+            "Code Postal": {
                 "description": "Code postal",
                 "tags": {
                     "type": "str",
@@ -947,16 +976,16 @@
                     "identifier": "code"
                 }
             },
-            "codeinsee": {
-                "description": "Code INSEE du Bureau De Vote",
+            "Code Insee": {
+                "description": "Code INSEE de la commune",
                 "tags": {
                     "type": "str",
                     "class": "zone",
-                    "scope": "polling_station",
+                    "scope": "municipality",
                     "identifier": "code"
                 }
             },
-            "coordonnees": {
+            "Coordonnées": {
                 "description": "Coordonnées",
                 "tags": {
                     "type": "geo_point_2d",
@@ -964,7 +993,7 @@
                     "scope": "polling_station"
                 }
             },
-            "exp_ins": {
+            "% Exp/Ins": {
                 "description": "Exprimés sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -981,7 +1010,7 @@
                     }
                 }
             },
-            "exp_vot": {
+            "% Exp/Vot": {
                 "description": "Exprimés sur Votants",
                 "tags": {
                     "type": "number",
@@ -998,21 +1027,21 @@
                     }
                 }
             },
-            "exprimes": {
+            "Exprimés": {
                 "description": "Exprimés",
                 "tags": {
                     "type": "number",
                     "value": "valid_votes"
                 }
             },
-            "inscrits": {
+            "Inscrits": {
                 "description": "Inscrits",
                 "tags": {
                     "type": "number",
                     "value": "registered"
                 }
             },
-            "libelle_de_la_circonscription": {
+            "Circonscription": {
                 "description": "Libellé de la circonscription",
                 "tags": {
                     "type": "str",
@@ -1020,7 +1049,7 @@
                     "scope": "district",
                     "qualifier": "caption"
                 },
-                "libelle_de_la_commune": {
+                "Commune": {
                     "description": "Libellé de la commune",
                     "tags": {
                         "type": "str",
@@ -1029,7 +1058,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "libelle_du_departement": {
+                "Département": {
                     "description": "Libellé du département",
                     "tags": {
                         "type": "str",
@@ -1038,7 +1067,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "ndegpanneau": {
+                "N°Panneau": {
                     "description": "N°Panneau",
                     "tags": {
                         "type": "str",
@@ -1046,7 +1075,7 @@
                         "qualifier": "n_billboard"
                     }
                 },
-                "nom": {
+                "Nom": {
                     "description": "Nom du candidat",
                     "tags": {
                         "type": "str",
@@ -1054,7 +1083,7 @@
                         "qualifier": "surname"
                     }
                 },
-                "nom_bureau_vote": {
+                "Nom Bureau Vote": {
                     "description": "Type de bureau de vote"
                 },
                 "nuance": {
@@ -1065,14 +1094,16 @@
                         "identifier": "caption"
                     }
                 },
-                "nuls": {
+                "Nuls": {
                     "description": "Nuls",
                     "tags": {
                         "type": "number",
-                        "data": "null_votes"
+                        "data": [
+                            "null_votes"
+                        ]
                     }
                 },
-                "nuls_ins": {
+                "% Nuls/Ins": {
                     "description": "Nuls sur Inscrits",
                     "tags": {
                         "type": "number",
@@ -1089,7 +1120,7 @@
                         }
                     }
                 },
-                "nuls_vot": {
+                "% Nuls/Vot": {
                     "description": "Nuls sur votants",
                     "tags": {
                         "type": "number",
@@ -1106,7 +1137,7 @@
                         }
                     }
                 },
-                "prenom": {
+                "Prénom": {
                     "description": "Prénom du Candidat",
                     "tags": {
                         "type": "str",
@@ -1114,7 +1145,7 @@
                         "qualifier": "first_name"
                     }
                 },
-                "sexe": {
+                "Sexe": {
                     "description": "Sexe du Candidat",
                     "tags": {
                         "type": "str",
@@ -1131,18 +1162,20 @@
                         "qualifier": "caption"
                     }
                 },
-                "ville": {
+                "Ville": {
                     "description": "Nom de la ville",
                     "tags": {}
                 },
-                "voix": {
+                "Voix": {
                     "description": "Nombre de voix du candidat",
                     "tags": {
                         "type": "number",
-                        "data": "votes"
+                        "data": [
+                            "votes"
+                        ]
                     }
                 },
-                "voix_exp": {
+                "% Voix/Exp": {
                     "description": "Voix sur exprimés",
                     "tags": {
                         "type": "number",
@@ -1159,7 +1192,7 @@
                         }
                     }
                 },
-                "voix_ins": {
+                "% Voix/Ins": {
                     "description": "Voix sur inscrits",
                     "tags": {
                         "type": "number",
@@ -1176,7 +1209,7 @@
                         }
                     }
                 },
-                "vot_ins": {
+                "% Vot/Ins": {
                     "description": "Votants sur inscrits",
                     "tags": {
                         "type": "number",
@@ -1193,7 +1226,7 @@
                         }
                     }
                 },
-                "votants": {
+                "Votants": {
                     "description": "Votants",
                     "tags": {
                         "type": "number",
@@ -1211,20 +1244,21 @@
             "round": 2
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "polling_station": {
-                "municipality_code_insee": "codeinsee",
-                "BDV_code": "code_du_b_vote"
+                "municipality_code_insee": "Code Insee",
+                "BDV_code": "Bureau de vote"
             },
             "candidate": {
-                "surname": "nom",
-                "first_name": "prenom"
+                "surname": "Nom",
+                "first_name": "Prénom"
             }
         },
         "raw_data": {
-            "abs_ins": {
+            "% Abs/Ins": {
                 "description": "Abstention sur inscrits",
                 "tags": {
                     "type": "number",
@@ -1241,14 +1275,14 @@
                     }
                 }
             },
-            "abstentions": {
+            "Abstentions": {
                 "description": "Abstentions",
                 "tags": {
                     "type": "number",
                     "value": "abstention"
                 }
             },
-            "adresse": {
+            "Adresse": {
                 "description": "Adresse du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -1257,14 +1291,14 @@
                     "qualifier": "address"
                 }
             },
-            "blancs": {
+            "Blancs": {
                 "description": "Blancs",
                 "tags": {
                     "type": "number",
                     "value": "blank"
                 }
             },
-            "blancs_ins": {
+            "% Blancs/Ins": {
                 "description": "Blancs sur inscrits",
                 "tags": {
                     "type": "number",
@@ -1281,7 +1315,7 @@
                     }
                 }
             },
-            "blancs_vot": {
+            "% Blancs/Vot": {
                 "description": "Blancs sur votants",
                 "tags": {
                     "type": "number",
@@ -1298,7 +1332,7 @@
                     }
                 }
             },
-            "code_de_la_circonscription": {
+            "Code de la circonscription": {
                 "description": "Code de la circonscription",
                 "tags": {
                     "type": "str",
@@ -1307,7 +1341,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_de_la_commune": {
+            "Code de la commune": {
                 "description": "Code de la commune",
                 "tags": {
                     "type": "str",
@@ -1316,7 +1350,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_b_vote": {
+            "Bureau de vote": {
                 "description": "Code du Bureau De Vote",
                 "tags": {
                     "type": "str",
@@ -1325,7 +1359,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_departement": {
+            "Code du département": {
                 "description": "Code du Département",
                 "tags": {
                     "type": "str",
@@ -1334,7 +1368,7 @@
                     "identifier": "code"
                 }
             },
-            "code_postal": {
+            "Code Postal": {
                 "description": "Code postal",
                 "tags": {
                     "type": "str",
@@ -1343,16 +1377,16 @@
                     "identifier": "code"
                 }
             },
-            "codeinsee": {
-                "description": "Code INSEE du Bureau De Vote",
+            "Code Insee": {
+                "description": "Code INSEE de la commune",
                 "tags": {
                     "type": "str",
                     "class": "zone",
-                    "scope": "polling_station",
+                    "scope": "municipality",
                     "identifier": "code"
                 }
             },
-            "coordonnees": {
+            "Coordonnées": {
                 "description": "Coordonnées",
                 "tags": {
                     "type": "geo_point_2d",
@@ -1360,7 +1394,7 @@
                     "scope": "polling_station"
                 }
             },
-            "exp_ins": {
+            "% Exp/Ins": {
                 "description": "Exprimés sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -1377,7 +1411,7 @@
                     }
                 }
             },
-            "exp_vot": {
+            "% Exp/Vot": {
                 "description": "Exprimés sur Votants",
                 "tags": {
                     "type": "number",
@@ -1394,21 +1428,21 @@
                     }
                 }
             },
-            "exprimes": {
+            "Exprimés": {
                 "description": "Exprimés",
                 "tags": {
                     "type": "number",
                     "value": "valid_votes"
                 }
             },
-            "inscrits": {
+            "Inscrits": {
                 "description": "Inscrits",
                 "tags": {
                     "type": "number",
                     "value": "registered"
                 }
             },
-            "libelle_de_la_circonscription": {
+            "Circonscription": {
                 "description": "Libellé de la circonscription",
                 "tags": {
                     "type": "str",
@@ -1416,7 +1450,7 @@
                     "scope": "district",
                     "qualifier": "caption"
                 },
-                "libelle_de_la_commune": {
+                "Commune": {
                     "description": "Libellé de la commune",
                     "tags": {
                         "type": "str",
@@ -1425,7 +1459,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "libelle_du_departement": {
+                "Département": {
                     "description": "Libellé du département",
                     "tags": {
                         "type": "str",
@@ -1434,7 +1468,7 @@
                         "qualifier": "caption"
                     }
                 },
-                "ndegpanneau": {
+                "N°Panneau": {
                     "description": "N°Panneau",
                     "tags": {
                         "type": "str",
@@ -1442,7 +1476,7 @@
                         "qualifier": "n_billboard"
                     }
                 },
-                "nom": {
+                "Nom": {
                     "description": "Nom du candidat",
                     "tags": {
                         "type": "str",
@@ -1450,7 +1484,7 @@
                         "qualifier": "surname"
                     }
                 },
-                "nom_bureau_vote": {
+                "Nom Bureau Vote": {
                     "description": "Type de bureau de vote"
                 },
                 "nuance": {
@@ -1461,14 +1495,16 @@
                         "identifier": "caption"
                     }
                 },
-                "nuls": {
+                "Nuls": {
                     "description": "Nuls",
                     "tags": {
                         "type": "number",
-                        "data": "null_votes"
+                        "data": [
+                            "null_votes"
+                        ]
                     }
                 },
-                "nuls_ins": {
+                "% Nuls/Ins": {
                     "description": "Nuls sur Inscrits",
                     "tags": {
                         "type": "number",
@@ -1485,7 +1521,7 @@
                         }
                     }
                 },
-                "nuls_vot": {
+                "% Nuls/Vot": {
                     "description": "Nuls sur votants",
                     "tags": {
                         "type": "number",
@@ -1502,7 +1538,7 @@
                         }
                     }
                 },
-                "prenom": {
+                "Prénom": {
                     "description": "Prénom du Candidat",
                     "tags": {
                         "type": "str",
@@ -1510,7 +1546,7 @@
                         "qualifier": "first_name"
                     }
                 },
-                "sexe": {
+                "Sexe": {
                     "description": "Sexe du Candidat",
                     "tags": {
                         "type": "str",
@@ -1527,18 +1563,20 @@
                         "qualifier": "caption"
                     }
                 },
-                "ville": {
+                "Ville": {
                     "description": "Nom de la ville",
                     "tags": {}
                 },
-                "voix": {
+                "Voix": {
                     "description": "Nombre de voix du candidat",
                     "tags": {
                         "type": "number",
-                        "data": "votes"
+                        "data": [
+                            "votes"
+                        ]
                     }
                 },
-                "voix_exp": {
+                "% Voix/Exp": {
                     "description": "Voix sur exprimés",
                     "tags": {
                         "type": "number",
@@ -1555,7 +1593,7 @@
                         }
                     }
                 },
-                "voix_ins": {
+                "% Voix/Ins": {
                     "description": "Voix sur inscrits",
                     "tags": {
                         "type": "number",
@@ -1572,7 +1610,7 @@
                         }
                     }
                 },
-                "vot_ins": {
+                "% Vot/Ins": {
                     "description": "Votants sur inscrits",
                     "tags": {
                         "type": "number",
@@ -1589,7 +1627,7 @@
                         }
                     }
                 },
-                "votants": {
+                "Votants": {
                     "description": "Votants",
                     "tags": {
                         "type": "number",
@@ -1607,20 +1645,21 @@
             "round": 2
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "polling_station": {
-                "municipality_code_insee": "codeinsee",
-                "BDV_code": "code_du_b_vote"
+                "municipality_code_insee": "CODEINSEE",
+                "BDV_code": "CODBURVOT"
             },
             "candidate": {
-                "surname": "nompsn",
-                "first_name": "prepsn"
+                "surname": "NOMPSN",
+                "first_name": "PREPSN"
             }
         },
         "raw_data": {
-            "codburvot": {
+            "CODBURVOT": {
                 "description": "Code du Bureau de Vote",
                 "tags": {
                     "type": "str",
@@ -1730,7 +1769,7 @@
                     "value": "voters"
                 }
             },
-            "sum_v_nbrvoix": {
+            "SUM_V_NBRVOIX": {
                 "description": "",
                 "tags": {
                     "type": "number",
@@ -1746,63 +1785,64 @@
             "kind": "equipements_services_action_sociale"
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "IRIS": {
-                "iris_code": "code_iris"
+                "iris_code": "Code IRIS"
             }
         },
         "raw_data": {
-            "adultes_handicapes_hebergement": {
+            "Adultes handicapés : hébergement": {
                 "description": "Adultes handicapés : hébergement",
                 "tags": {
                     "type": "number"
                 }
             },
-            "adultes_handicapes_services": {
+            "Adultes handicapés : services": {
                 "description": "Adultes handicapés : services",
                 "tags": {
                     "type": "number"
                 }
             },
-            "aide_sociale_a_l_enfance_action_educative": {
+            "Aide sociale à l'enfance : action éducative": {
                 "description": "Aide sociale à l'enfance : action éducative",
                 "tags": {
                     "type": "number"
                 }
             },
-            "aide_sociale_a_l_enfance_hebergement": {
+            "Aide sociale à l'enfance : hébergement": {
                 "description": "Aide sociale à l'enfance : hébergement",
                 "tags": {
                     "type": "number"
                 }
             },
-            "autres_etablissements_pour_adultes_et_familles_en_difficulte": {
+            "Autres établissements pour adultes et familles en difficulté": {
                 "description": "Autres établissements pour adultes et familles en difficulté",
                 "tags": {
                     "type": "number"
                 }
             },
-            "centre_accueil_demandeur_d_asile": {
+            "Centre accueil demandeur d'asile": {
                 "description": "Centre accueil demandeur d'asile",
                 "tags": {
                     "type": "number"
                 }
             },
-            "centre_provisoire_d_hebergement": {
+            "Centre provisoire d'hébergement": {
                 "description": "Centre provisoire d'hébergement",
                 "tags": {
                     "type": "number"
                 }
             },
-            "chrs_centre_d_hebergement_et_de_readaptation_sociale": {
+            "CHRS : centre d'hébergement et de réadaptation sociale": {
                 "description": "CHRS : centre d'hébergement et de réadaptation sociale",
                 "tags": {
                     "type": "number"
                 }
             },
-            "code_commune": {
+            "Code commune": {
                 "description": "Code commune",
                 "tags": {
                     "type": "str",
@@ -1811,7 +1851,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_iris": {
+            "Code IRIS": {
                 "description": "Code IRIS",
                 "tags": {
                     "type": "str",
@@ -1820,7 +1860,7 @@
                     "identifier": "code"
                 }
             },
-            "code_region": {
+            "CODE_REGION": {
                 "description": "CODE_REGION",
                 "tags": {
                     "type": "str",
@@ -1829,7 +1869,7 @@
                     "identifier": "code"
                 }
             },
-            "code_region_2016": {
+            "CODE_REGION_2016": {
                 "description": "CODE_REGION_2016",
                 "tags": {
                     "type": "str",
@@ -1838,7 +1878,7 @@
                     "identifier": "code"
                 }
             },
-            "departement": {
+            "Département": {
                 "description": "Département",
                 "tags": {
                     "type": "str",
@@ -1847,7 +1887,7 @@
                     "identifier": "code"
                 }
             },
-            "depcom": {
+            "DEPCOM": {
                 "description": "DEPCOM",
                 "tags": {
                     "type": "str",
@@ -1856,19 +1896,19 @@
                     "identifier": "code"
                 }
             },
-            "enfants_handicapes_hebergement": {
+            "Enfants handicapés : hébergement": {
                 "description": "Enfants handicapés : hébergement",
                 "tags": {
                     "type": "number"
                 }
             },
-            "enfants_handicapes_services_a_domicile_ou_ambulatoires": {
+            "Enfants handicapés : services à domicile ou ambulatoires": {
                 "description": "Enfants handicapés : services à domicile ou ambulatoires",
                 "tags": {
                     "type": "number"
                 }
             },
-            "garde_d_enfant_d_age_prescolaire": {
+            "Garde d'enfant d'âge préscolaire": {
                 "description": "Garde d'enfant d'âge préscolaire",
                 "tags": {
                     "type": "number"
@@ -1882,13 +1922,13 @@
                     "scope": "IRIS"
                 }
             },
-            "geo_shape": {
+            "GEO_SHAPE": {
                 "description": "GEO_SHAPE",
                 "tags": {
                     "type": "MultiPolygon"
                 }
             },
-            "iris": {
+            "IRIS": {
                 "description": "IRIS",
                 "tags": {
                     "type": "str",
@@ -1897,7 +1937,7 @@
                     "qualifier": "code"
                 }
             },
-            "libelle_de_commune": {
+            "Libellé de commune": {
                 "description": "Libellé de commune",
                 "tags": {
                     "type": "str",
@@ -1906,7 +1946,7 @@
                     "qualifier": "caption"
                 }
             },
-            "libelle_de_l_iris": {
+            "Libellé de l'IRIS": {
                 "description": "Libellé de l'IRIS",
                 "tags": {
                     "type": "str",
@@ -1915,11 +1955,11 @@
                     "qualifier": "caption"
                 }
             },
-            "nom_com": {
+            "NOM_COM": {
                 "description": "NOM_COM",
                 "tags": {}
             },
-            "nom_dept": {
+            "num_dept": {
                 "description": "num_dept",
                 "tags": {
                     "type": "str",
@@ -1928,7 +1968,7 @@
                     "identifier": "code"
                 }
             },
-            "nom_iris": {
+            "NOM_IRIS": {
                 "description": "NOM_IRIS",
                 "tags": {
                     "type": "str",
@@ -1937,7 +1977,7 @@
                     "qualifier": "caption"
                 }
             },
-            "nom_region": {
+            "NOM_REGION": {
                 "description": "NOM_REGION",
                 "tags": {
                     "type": "str",
@@ -1946,7 +1986,7 @@
                     "qualifier": "caption"
                 }
             },
-            "num_dept": {
+            "NOM_DEPT": {
                 "description": "NOM_DEPT",
                 "tags": {
                     "type": "str",
@@ -1955,58 +1995,58 @@
                     "qualifier": "caption"
                 }
             },
-            "p12_pop": {
+            "P12_POP": {
                 "description": "P12_POP",
                 "tags": {
                     "type": "number",
                     "value": "population"
                 }
             },
-            "personnes_agees_foyer_restaurant": {
+            "Personnes âgées : foyer restaurant": {
                 "description": "Personnes âgées : foyer restaurant",
                 "tags": {
                     "type": "number"
                 }
             },
-            "personnes_agees_hebergement": {
+            "Personnes âgées : hébergement": {
                 "description": "Personnes âgées : hébergement",
                 "tags": {
                     "type": "number"
                 }
             },
-            "personnes_agees_services_d_aide": {
+            "Personnes âgées : services d'aide": {
                 "description": "Personnes âgées : services d'aide",
                 "tags": {
                     "type": "number"
                 }
             },
-            "personnes_agees_services_de_repas_a_domicile": {
+            "Personnes âgées : services de repas à domicile": {
                 "description": "Personnes âgées : services de repas à domicile",
                 "tags": {
                     "type": "number"
                 }
             },
-            "personnes_agees_soins_a_domicile": {
+            "Personnes âgées : soins à domicile": {
                 "description": "Personnes âgées : soins à domicile",
                 "tags": {
                     "type": "number"
                 }
             },
-            "region": {
+            "Région": {
                 "description": "Région",
                 "tags": {}
             },
-            "region2016": {
+            "Région2016": {
                 "description": "Région2016",
                 "tags": {}
             },
-            "travail_protege": {
+            "Travail protégé": {
                 "description": "Travail protégé",
                 "tags": {
                     "type": "number"
                 }
             },
-            "typ_iris": {
+            "TYP_IRIS": {
                 "description": "TYP_IRIS",
                 "tags": {}
             }
@@ -2019,15 +2059,16 @@
             "kind": "demography"
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "IRIS": {
-                "iris_code": "c_ir"
+                "iris_code": "C_IR"
             }
         },
         "raw_data": {
-            "c12_pop15p": {
+            "C12_POP15P": {
                 "description": "Pop 15 ans ou plus en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2042,7 +2083,7 @@
                     }
                 }
             },
-            "c12_pop1_1": {
+            "C12_POP1_1": {
                 "description": "Pop 15 ans ou plus Agriculteurs exploitants en 2012 (compl)",
                 "tags": {
                     "type": "number",
@@ -2058,7 +2099,7 @@
                     }
                 }
             },
-            "c12_pop1_2": {
+            "C12_POP1_2": {
                 "description": "Pop 15 ans ou plus Artisans, Comm., Chefs entr. en 2012 (compl)",
                 "tags": {
                     "type": "number",
@@ -2074,7 +2115,7 @@
                     }
                 }
             },
-            "c12_pop1_3": {
+            "C12_POP1_3": {
                 "description": "Pop 15 ans ou plus Cadres, Prof. intel. sup. en 2012 (compl)",
                 "tags": {
                     "type": "number",
@@ -2090,7 +2131,7 @@
                     }
                 }
             },
-            "c12_pop1_4": {
+            "C12_POP1_4": {
                 "description": "Pop 15 ans ou plus Prof. intermédiaires en 2012 (compl)",
                 "tags": {
                     "type": "number",
@@ -2106,7 +2147,7 @@
                     }
                 }
             },
-            "c12_pop1_5": {
+            "C12_POP1_5": {
                 "description": "Pop 15 ans ou plus Employés en 2012 (compl)",
                 "tags": {
                     "type": "number",
@@ -2122,7 +2163,7 @@
                     }
                 }
             },
-            "c12_pop1_6": {
+            "C12_POP1_6": {
                 "description": "Pop 15 ans ou plus Ouvriers en 2012 (compl)",
                 "tags": {
                     "type": "number",
@@ -2138,11 +2179,11 @@
                     }
                 }
             },
-            "c_cainsee": {
+            "C_CAINSEE": {
                 "description": "C_CAINSEE",
                 "tags": {}
             },
-            "c_ir": {
+            "C_IR": {
                 "description": "Code IRIS",
                 "tags": {
                     "type": "str",
@@ -2151,19 +2192,19 @@
                     "identifier": "code"
                 }
             },
-            "c_typeir": {
+            "C_TYPEIR": {
                 "description": "C_TYPEIR",
                 "tags": {}
             },
-            "com": {
+            "COM": {
                 "description": "Commune ou ARM",
                 "tags": {}
             },
-            "cs3_cs56": {
+            "CS3_CS56": {
                 "description": "",
                 "tags": {}
             },
-            "denspop12": {
+            "DENSPOP12": {
                 "description": "Densité Population",
                 "tags": {
                     "type": "number",
@@ -2180,7 +2221,7 @@
                     }
                 }
             },
-            "dep": {
+            "DEP": {
                 "description": "Département",
                 "tags": {
                     "type": "str",
@@ -2189,11 +2230,11 @@
                     "identifier": "code"
                 }
             },
-            "ept": {
+            "EPT": {
                 "description": "EPT",
                 "tags": {}
             },
-            "geo_point_2d": {
+            "Geo Point": {
                 "description": "Geo Point",
                 "tags": {
                     "type": "geo_point_2d",
@@ -2201,17 +2242,17 @@
                     "scope": "IRIS"
                 }
             },
-            "geo_shape": {
+            "Geo Shape": {
                 "description": "Geo Shape",
                 "tags": {
                     "type": "MultiPolygon"
                 }
             },
-            "indjeun201": {
+            "INDJEUN201": {
                 "description": "",
                 "tags": {}
             },
-            "iris": {
+            "IRIS": {
                 "description": "IRIS",
                 "tags": {
                     "type": "str",
@@ -2220,11 +2261,11 @@
                     "identifier": "code"
                 }
             },
-            "iris_num": {
+            "IRIS_NUM": {
                 "description": "IRIS_NUM",
                 "tags": {}
             },
-            "l_ir": {
+            "L_IR": {
                 "description": "L_IR",
                 "tags": {
                     "type": "str",
@@ -2233,11 +2274,11 @@
                     "qualifier": "caption"
                 }
             },
-            "lab_iris": {
+            "LAB_IRIS": {
                 "description": "Label de l'IRIS",
                 "tags": {}
             },
-            "libcom": {
+            "LIBCOM": {
                 "description": "Libellé commune ou ARM",
                 "tags": {
                     "type": "str",
@@ -2246,39 +2287,39 @@
                     "qualifier": "caption"
                 }
             },
-            "libiris": {
+            "LIBIRIS": {
                 "description": "Libellé de l'IRIS",
                 "tags": {}
             },
-            "m2_emp": {
+            "M2_EMP": {
                 "description": "M2_EMP",
                 "tags": {}
             },
-            "m2_ip": {
+            "M2_IP": {
                 "description": "M2_IP",
                 "tags": {}
             },
-            "m2_pop": {
+            "M2_POP": {
                 "description": "M2_POP",
                 "tags": {}
             },
-            "modif_iris": {
+            "MODIF_IRIS": {
                 "description": "Modification de l'IRIS",
                 "tags": {}
             },
-            "n_sq_ir": {
+            "N_SQ_IR": {
                 "description": "N_SQ_IR",
                 "tags": {}
             },
-            "nom_ept": {
+            "NOM_EPT": {
                 "description": "NOM_EPT",
                 "tags": {}
             },
-            "objectid": {
+            "OBJECTID": {
                 "description": "OBJECTID",
                 "tags": {}
             },
-            "p07_pop": {
+            "P07_POP": {
                 "description": "Population en 2007 (princ)",
                 "tags": {
                     "type": "number",
@@ -2286,7 +2327,7 @@
                     "year": "2007"
                 }
             },
-            "p12_f0014": {
+            "P12_F0014": {
                 "description": "Pop Femmes 0-14 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2302,7 +2343,7 @@
                     }
                 }
             },
-            "p12_f1529": {
+            "P12_F1529": {
                 "description": "Pop Femmes 15-29 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2318,7 +2359,7 @@
                     }
                 }
             },
-            "p12_f3044": {
+            "P12_F3044": {
                 "description": "Pop Femmes 30-44 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2334,7 +2375,7 @@
                     }
                 }
             },
-            "p12_f4559": {
+            "P12_F4559": {
                 "description": "Pop Femmes 45-59 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2350,7 +2391,7 @@
                     }
                 }
             },
-            "p12_f6074": {
+            "P12_F6074": {
                 "description": "Pop Femmes 60-74 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2366,7 +2407,7 @@
                     }
                 }
             },
-            "p12_f75p": {
+            "P12_F75p": {
                 "description": "Pop Femmes 75 ans ou plus en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2382,7 +2423,7 @@
                     }
                 }
             },
-            "p12_h0014": {
+            "P12_M0014": {
                 "description": "Pop Hommes 0-14 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2398,7 +2439,7 @@
                     }
                 }
             },
-            "p12_h1529": {
+            "P12_M1529": {
                 "description": "Pop Hommes 15-29 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2414,7 +2455,7 @@
                     }
                 }
             },
-            "p12_h3044": {
+            "P12_M3044": {
                 "description": "Pop Hommes 30-44 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2430,7 +2471,7 @@
                     }
                 }
             },
-            "p12_h4559": {
+            "P12_M4559": {
                 "description": "Pop Hommes 45-59 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2446,7 +2487,7 @@
                     }
                 }
             },
-            "p12_h6074": {
+            "P12_M6074": {
                 "description": "Pop Hommes 60-74 ans en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2462,7 +2503,7 @@
                     }
                 }
             },
-            "p12_h75p": {
+            "P12_M75p": {
                 "description": "Pop Hommes 75 ans ou plus en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2478,22 +2519,22 @@
                     }
                 }
             },
-            "p12_pop": {
+            "P12_POP": {
                 "description": "Population en 2012 (princ)",
                 "tags": {
                     "type": "number",
                     "value": "population"
                 }
             },
-            "p12_pop001": {
+            "P12_POP001": {
                 "description": "",
                 "tags": {}
             },
-            "p12_pop60p": {
+            "P12_POP60P": {
                 "description": "",
                 "tags": {}
             },
-            "p12_pop_et": {
+            "P12_POP_ET": {
                 "description": "Pop Etrangers en 2012 (princ)",
                 "tags": {
                     "type": "number",
@@ -2508,7 +2549,7 @@
                     }
                 }
             },
-            "p12_pop_im": {
+            "P12_POP_IM": {
                 "description": "Pop Immigrés en 2012 (princ)",
                 "tags": {
                     "value": {
@@ -2522,13 +2563,13 @@
                     }
                 }
             },
-            "shape_area": {
+            "SHAPE_Area": {
                 "description": "",
                 "tags": {
                     "type": "Polygon"
                 }
             },
-            "shape_ha": {
+            "SHAPE_ha": {
                 "description": "Area of the zone",
                 "tags": {
                     "type": "number",
@@ -2551,27 +2592,27 @@
                     }
                 }
             },
-            "shape_leng": {
+            "SHAPE_Leng": {
                 "description": "",
                 "tags": {}
             },
-            "tx12_pop_e": {
+            "TX12_POP_E": {
                 "description": "",
                 "tags": {}
             },
-            "tx12_pop_i": {
+            "TX12_POP_I": {
                 "description": "",
                 "tags": {}
             },
-            "txan0712_p": {
+            "TXAN0712_P": {
                 "description": "",
                 "tags": {}
             },
-            "typ_iris": {
+            "TYP_IRIS": {
                 "description": "Type d'IRIS",
                 "tags": {}
             },
-            "uu2010": {
+            "UU2010": {
                 "description": "Unité urbaine",
                 "tags": {}
             }
@@ -2585,7 +2626,8 @@
             "round": 1
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "municipality": {
@@ -2914,15 +2956,16 @@
             "kind": "disposable_income_poverty"
         },
         "get": {
-            "source": "opendatasoft"
+            "source": "local",
+            "extension": ".csv"
         },
         "keys": {
             "IRIS": {
-                "iris_code": "iris"
+                "iris_code": "IRIS"
             }
         },
         "raw_data": {
-            "com": {
+            "COM": {
                 "description": "Commune ou ARM",
                 "tags": {
                     "type": "str",
@@ -2931,7 +2974,7 @@
                     "identifier": "code"
                 }
             },
-            "disp_d112": {
+            "DISP_D112": {
                 "description": "Unité de consommation - 1er décile (€)",
                 "tags": {
                     "type": "number",
@@ -2944,7 +2987,7 @@
                     }
                 }
             },
-            "disp_d212": {
+            "DISP_D212": {
                 "description": "2e décile (€)",
                 "tags": {
                     "type": "number",
@@ -2957,7 +3000,7 @@
                     }
                 }
             },
-            "disp_d312": {
+            "DISP_D312": {
                 "description": "3e décile (€)",
                 "tags": {
                     "type": "number",
@@ -2970,7 +3013,7 @@
                     }
                 }
             },
-            "disp_d412": {
+            "DISP_D412": {
                 "description": "4e décile (€)",
                 "tags": {
                     "type": "number",
@@ -2983,7 +3026,7 @@
                     }
                 }
             },
-            "disp_d612": {
+            "DISP_D612": {
                 "description": "6e décile (€)",
                 "tags": {
                     "type": "number",
@@ -2996,7 +3039,7 @@
                     }
                 }
             },
-            "disp_d712": {
+            "DISP_D712": {
                 "description": "7e décile (€)",
                 "tags": {
                     "type": "number",
@@ -3009,7 +3052,7 @@
                     }
                 }
             },
-            "disp_d812": {
+            "DISP_D812": {
                 "description": "8e décile (€)",
                 "tags": {
                     "type": "number",
@@ -3022,7 +3065,7 @@
                     }
                 }
             },
-            "disp_d912": {
+            "DISP_D912": {
                 "description": "9e décile (€)",
                 "tags": {
                     "type": "number",
@@ -3035,7 +3078,7 @@
                     }
                 }
             },
-            "disp_med12": {
+            "DISP_MED12": {
                 "description": "Médiane (€)",
                 "tags": {
                     "type": "number",
@@ -3048,14 +3091,14 @@
                     }
                 }
             },
-            "disp_nbmenfisc12": {
+            "DISP_NBMENFISC12": {
                 "description": "Nombre de ménages fiscaux",
                 "tags": {
                     "type": "number",
                     "value": "tax_unit"
                 }
             },
-            "disp_nbpersmenfisc12": {
+            "DISP_NBPERSMENFISC12": {
                 "description": "Nombre de personnes dans les ménages fiscaux",
                 "tags": {
                     "type": "number",
@@ -3072,7 +3115,7 @@
                     }
                 }
             },
-            "disp_nbuc12": {
+            "DISP_NBUC12": {
                 "description": "Nombre d'unités de consommation dans les ménages fiscaux",
                 "tags": {
                     "type": "number",
@@ -3089,7 +3132,7 @@
                     }
                 }
             },
-            "disp_pimpot12": {
+            "DISP_PIMPOT12": {
                 "description": "Part des impôts (%)",
                 "tags": {
                     "type": "number",
@@ -3106,7 +3149,7 @@
                     }
                 }
             },
-            "disp_ppat12": {
+            "DISP_PPAT12": {
                 "description": "Part des revenus du patrimoine (%)",
                 "tags": {
                     "type": "number",
@@ -3123,7 +3166,7 @@
                     }
                 }
             },
-            "disp_ppen12": {
+            "DISP_PPEN12": {
                 "description": "Part des pensions, retraites et rentes (%)",
                 "tags": {
                     "type": "number",
@@ -3152,7 +3195,7 @@
                     }
                 }
             },
-            "disp_ppfam12": {
+            "DISP_PPFAM12": {
                 "description": "dont part des prestations familiales (%)",
                 "tags": {
                     "type": "number",
@@ -3169,7 +3212,7 @@
                     }
                 }
             },
-            "disp_pplogt12": {
+            "DISP_PPLOGT12": {
                 "description": "dont part des prestations logement (%)",
                 "tags": {
                     "type": "number",
@@ -3186,7 +3229,7 @@
                     }
                 }
             },
-            "disp_ppmini12": {
+            "DISP_PPMINI12": {
                 "description": "dont part des minima sociaux (%)",
                 "tags": {
                     "type": "number",
@@ -3203,7 +3246,7 @@
                     }
                 }
             },
-            "disp_ppsoc12": {
+            "DISP_PPSOC12": {
                 "description": "Part de l'ensemble des prestations sociales (%)",
                 "tags": {
                     "type": "number",
@@ -3220,7 +3263,7 @@
                     }
                 }
             },
-            "disp_prac12": {
+            "DISP_PRAC12": {
                 "description": "Part des revenus d'activités (salariées et non salariées), hors indemnités de chômage (%)",
                 "tags": {
                     "type": "number",
@@ -3237,29 +3280,7 @@
                     }
                 }
             },
-            "disp_rd12": {
-                "description": "Rapport interdécile",
-                "tags": {}
-            },
-            "disp_tp6012": {
-                "description": "Taux de bas revenus déclarés au seuil de 60 % (%)",
-                "tags": {}
-            },
-            "geo_point_2d": {
-                "description": "geo_point_2d",
-                "tags": {
-                    "type": "geo_point_2d",
-                    "class": "zone",
-                    "scope": "IRIS"
-                }
-            },
-            "geom": {
-                "description": "geom",
-                "tags": {
-                    "type": "Point"
-                }
-            },
-            "iris": {
+            "IRIS": {
                 "description": "IRIS",
                 "tags": {
                     "type": "str",
@@ -3268,7 +3289,7 @@
                     "identifier": "code"
                 }
             },
-            "libcom": {
+            "LIBCOM": {
                 "description": "Libellé commune ou ARM",
                 "tags": {
                     "type": "str",
@@ -3277,7 +3298,7 @@
                     "identifier": "caption"
                 }
             },
-            "libiris": {
+            "LIBIRIS": {
                 "description": "Libellé de l'IRIS",
                 "tags": {
                     "type": "str",
