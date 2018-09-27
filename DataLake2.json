@@ -2631,14 +2631,14 @@
         },
         "keys": {
             "municipality": {
-                "municipality_insee_code": "insee"
+                "municipality_insee_code": "Code Insee"
             },
             "nuance": {
-                "nuance_initials": "nuance_liste"
+                "nuance_initials": "Nuance Liste"
             }
         },
         "raw_data": {
-            "abs_ins": {
+            "% Abs/Ins": {
                 "description": "Abstentions sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -2655,21 +2655,21 @@
                     }
                 }
             },
-            "abstentions": {
+            "Abstentions": {
                 "description": "Abstentions",
                 "tags": {
                     "type": "number",
                     "value": "abstention"
                 }
             },
-            "blancs": {
+            "Blancs": {
                 "description": "Blancs",
                 "tags": {
                     "type": "number",
                     "value": "blank"
                 }
             },
-            "blancs_ins": {
+            "% Blancs/Ins": {
                 "description": "Blancs sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -2686,7 +2686,7 @@
                     }
                 }
             },
-            "blancs_vot": {
+            "% Blancs/Vot": {
                 "description": "Blancs sur votants",
                 "tags": {
                     "type": "number",
@@ -2703,7 +2703,7 @@
                     }
                 }
             },
-            "code_de_la_commune": {
+            "Code de la Commune": {
                 "description": "Code de la Commune",
                 "tags": {
                     "type": "str",
@@ -2712,7 +2712,7 @@
                     "qualifier": "code"
                 }
             },
-            "code_du_departement": {
+            "Code du Département": {
                 "description": "Code du Département",
                 "tags": {
                     "type": "str",
@@ -2721,7 +2721,7 @@
                     "identifier": "code"
                 }
             },
-            "coordonnees": {
+            "Coordonnees": {
                 "description": "Coordonnées",
                 "tags": {
                     "type": "geo_point_2d",
@@ -2730,11 +2730,11 @@
                     "qualifier": "geo_point_2d"
                 }
             },
-            "date_de_l_export": {
+            "Date de l'export": {
                 "description": "",
                 "tags": {}
             },
-            "exp_ins": {
+            "% Exp/Ins": {
                 "description": "Exprimés sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -2751,7 +2751,7 @@
                     }
                 }
             },
-            "exp_vot": {
+            "% Exp/Vot": {
                 "description": "Exprimés sur Votants",
                 "tags": {
                     "type": "number",
@@ -2768,21 +2768,21 @@
                     }
                 }
             },
-            "exprimes": {
+            "Exprimés": {
                 "description": "Exprimés",
                 "tags": {
                     "type": "number",
                     "value": "valid_votes"
                 }
             },
-            "inscrits": {
+            "Inscrits": {
                 "description": "Inscrits",
                 "tags": {
                     "type": "number",
                     "value": "registered"
                 }
             },
-            "insee": {
+            "Code Insee": {
                 "description": "Code Commune INSEE",
                 "tags": {
                     "type": "str",
@@ -2791,7 +2791,7 @@
                     "identifier": "code"
                 }
             },
-            "libelle_abrege_liste": {
+            "Libellé Abrégé Liste": {
                 "description": "Libellé abrégé liste",
                 "tags": {
                     "type": "str",
@@ -2799,7 +2799,7 @@
                     "qualifier": "caption"
                 }
             },
-            "libelle_de_la_commune": {
+            "Libellé de la commune": {
                 "description": "Libellé Commune",
                 "tags": {
                     "type": "str",
@@ -2808,7 +2808,7 @@
                     "qualifier": "caption"
                 }
             },
-            "libelle_du_departement": {
+            "Libellé du département": {
                 "description": "Libellé Département",
                 "tags": {
                     "type": "str",
@@ -2817,15 +2817,15 @@
                     "identifier": "caption"
                 }
             },
-            "libelle_etendu_liste": {
+            "Libellé Etendu Liste": {
                 "description": "Libellé étendu liste",
                 "tags": {}
             },
-            "ndegliste": {
+            "N°Liste": {
                 "description": "",
                 "tags": {}
             },
-            "nom_tete_de_liste": {
+            "Nom Tête de Liste": {
                 "description": "Nom tête de liste",
                 "tags": {
                     "type": "str",
@@ -2833,7 +2833,7 @@
                     "qualifier": "surname"
                 }
             },
-            "nuance_liste": {
+            "Nuance Liste": {
                 "description": "Nuance liste",
                 "tags": {
                     "type": "str",
@@ -2841,14 +2841,14 @@
                     "identifier": "caption"
                 }
             },
-            "nuls": {
+            "Nuls": {
                 "description": "Nuls",
                 "tags": {
                     "type": "number",
                     "value": "null_votes"
                 }
             },
-            "nuls_ins": {
+            "% Nuls/Ins": {
                 "description": "Nuls sur Incrits",
                 "tags": {
                     "type": "number",
@@ -2865,7 +2865,7 @@
                     }
                 }
             },
-            "nuls_vot": {
+            "% Nuls/Vot": {
                 "description": "Nuls sur Votants",
                 "tags": {
                     "type": "number",
@@ -2882,14 +2882,14 @@
                     }
                 }
             },
-            "voix": {
+            "Voix": {
                 "description": "Votes",
                 "tags": {
                     "type": "number",
                     "value": "votes"
                 }
             },
-            "voix_exp": {
+            "% Voix/Exp": {
                 "description": "Votes sur Exprimés",
                 "tags": {
                     "type": "number",
@@ -2906,7 +2906,7 @@
                     }
                 }
             },
-            "voix_ins": {
+            "% Voix/Ins": {
                 "description": "Votes sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -2923,7 +2923,7 @@
                     }
                 }
             },
-            "vot_ins": {
+            "% Vot/Ins": {
                 "description": "Votants sur Inscrits",
                 "tags": {
                     "type": "number",
@@ -2940,7 +2940,7 @@
                     }
                 }
             },
-            "votants": {
+            "Votants": {
                 "description": "Votants",
                 "tags": {
                     "type": "number",

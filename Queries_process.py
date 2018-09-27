@@ -10,11 +10,19 @@ def get_dataset(dataset_name:str,metadata:dict):
     if source == "local":
         extension = metadata[dataset_name]["get"]["extension"]
         if extension == '.csv':
-            return pd.read_csv("/Users/julien/QUORUM/Priorisation2/DataProvider/Datasets/"+dataset_name+extension, sep=";")
+            dataset = pd.read_csv("/Users/julien/QUORUM/Priorisation2/DataProvider/Datasets/"+dataset_name+extension, sep=";")
+            return convert_keys_to_str(dataset,dataset_name,metadata)
         else:
            return pd.DataFrame() 
     else:
         return pd.DataFrame()
+
+def convert_keys_to_str(dataset:object, dataset_name:str, metadata:dict):
+    keys = metadata[dataset_name]["keys"]
+    for key_elements in keys.values():
+        for column_name in key_elements.values():
+            dataset[column_name] = dataset[column_name].astype(str)
+    return dataset
 
 # Check if tags are equal
 def are_tags_equal(tag1, tag2):
@@ -151,21 +159,36 @@ def filter_dataset(datasets:dict, keys:dict, metadata:dict, compliteness_ratio=0
 
         # Fill result with elements from dataset present in keys
         filtered_dataset = pd.DataFrame(columns=dataset.columns)
-        length = len(next(iter(next(iter(keys.values())).values())))
-        all_keys = {}
-        
+        mask = pd.Series(np.full(len(dataset),True))
+        for key in keys.keys():
+            for key_element in keys[key].keys():
+                mask = mask & dataset[metadata[dataset_name]["keys"][key][key_element]].isin(keys[key][key_element])
+        filtered_dataset = dataset[mask]
+
+        '''length = len(next(iter(next(iter(keys.values())).values())))
         for i in range(length):
-            is_in_keys = True
+            j = 0
+            line_found = False
+            while not line_found and j < len(dataset):
+                line_found = True
+                for key in keys.keys():
+                    for key_element in keys[key].keys():
+                        col_name = metadata[dataset_name]["keys"][key][key_element]
+                        if dataset[col_name].loc[j] != keys[key][key_element][i]:
+                            line_found = False
+                if line_found == False:
+                    j = j+1
+            if j < len(dataset):
+                filtered_dataset = filtered_dataset.append(dataset.loc[j])
+
+
+
             for key in keys.keys():
                 for key_element in keys[key].keys():
-                    col_name = metadata[dataset_name]["keys"][key][key_element]
-                    all_keys[col_name] = keys[key][key_element]
-                    if dataset[col_name].loc[i] not in keys[key][key_element]:
-                        is_in_keys = False
-            if is_in_keys:
-                filtered_dataset = filtered_dataset.append(dataset.loc[i])
+                     col_name = metadata[dataset_name]["keys"][key][key_element]'''
+
         
-        compliteness = len(filtered_dataset)/length
+        compliteness = len(filtered_dataset)/len(next(iter(next(iter(keys.values())).values())))
         if compliteness > compliteness_ratio:
             filtered_datasets[dataset_name] = filtered_dataset
             compliteness_datasets[dataset_name] = compliteness
@@ -264,9 +287,9 @@ def get_datasets_with_dataset_tag(metadata, dataset_tags):
 
 
 # Basic request to get all datasets with the right tag with the specified keys
-def request(var_tag:dict, local_key_code:dict, compliteness_ratio=0, dataset_tags={}):
+def request(var_tag:dict, local_key_code:dict, metadata:dict, compliteness_ratio=0, dataset_tags={}):
 
-    metadata = get_metadata()
+    metadata =  deepcopy(metadata)
 
     metadata = get_datasets_with_dataset_tag(metadata, dataset_tags)
 
@@ -277,21 +300,18 @@ def request(var_tag:dict, local_key_code:dict, compliteness_ratio=0, dataset_tag
         -> var_col_names stores the right col_name
     '''
     var_datasets,var_metadata,var_col_names = get_datasets_from_tags(var_tag, metadata)
-
     '''
     Select datasets with the right local_key and right version
         -> local_datasets stores datasets with the right key and with the right version
         -> local_metadata stores their metadata
     '''
     local_datasets,local_metadata = convert_dataset_to_key_code_version(local_key_code,var_datasets,var_metadata)
-
     '''
     Filter to local_keys
         -> filtered_local_datasets stores the filtered local datasets
         -> compliteness stores their compliteness_ratio
     '''
     filtered_local_datasets,compliteness = filter_dataset(local_datasets,local_key_code,local_metadata,compliteness_ratio)
-
     '''
     Check compliteness and return variable with keys
     '''
@@ -401,28 +421,3 @@ def infer(local_features:object, training_features_and_label:object, model="line
         local_label_and_keys = pd.concat([pd.Series(local_label, name="label"),local_features.drop(feature_col_names,axis=1)],axis = 1)
 
     return local_label_and_keys
-
-      
-def get_key_correlation_from_dataset(dataset_name:str, metadata:dict):
-
-    dataset = get_dataset(dataset_name,metadata)
-    dataset = dataset.rename(columns=dict(zip(dataset.columns,[x.lower() for x in dataset.columns]), inplace=True))
-    for key in metadata[dataset_name]["keys"]:
-        key_correlation = get_keys_correlation(key)
-        version = -1
-        for i in range(len(key_correlation["versions"])):
-            if set(key_correlation["versions"][i].keys()) == set(metadata[dataset_name]["keys"][key].keys()):
-                version = i
-        if version == -1:
-            key_correlation["versions"].append({})
-        for key_element,colname in metadata[dataset_name]["keys"][key].items():
-            if colname.lower() not in dataset.columns:
-                print(colname, dataset_name)
-            else:
-                for x in dataset[colname.lower()].tolist():
-                    if x not in key_correlation["versions"][i][key_element]:
-                        key_correlation["versions"][i][key_element].append(x)
-        with open("/Users/julien/QUORUM/Priorisation2/DataProvider/Keys/"+key+".json",'w') as f:
-            dataa = json.dumps(key_correlation, ensure_ascii=False, indent=4, sort_keys=False)
-            f.write(dataa)
-            return True

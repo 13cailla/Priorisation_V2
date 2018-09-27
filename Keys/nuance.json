@@ -1,7 +1,28 @@
 {
     "versions": [
         {
-            "nuance_initials": []
+            "nuance_initials": [
+                "LVEC",
+                "LDIV",
+                "LUG",
+                "LFN",
+                "LFG",
+                "LDLF",
+                "LEXG",
+                "LREG",
+                "LUD",
+                "LDVD",
+                "LVEG",
+                "LCOM",
+                "LEXD",
+                "LDVG",
+                "LECO",
+                "LMDM",
+                "LSOC",
+                "LLR",
+                "LRDG",
+                "LUDI"
+            ]
         }
     ]
 }
